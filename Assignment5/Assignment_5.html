@@ -1,0 +1,89 @@
+<!DOCTYPE html >
+<html>
+<head>
+  <title>Assignment5</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">Noah's assignment5</li>
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui text container" style="margin-top: 80px;">
+    <h3>Please Select the view of form</h3>
+    <span>Show the form Grouped by
+      <div class="ui inline dropdown">
+        <div class="text">
+          
+          Name
+        </div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div id="namedata" class="item">
+           
+            Name
+          </div>
+          <div id="locationdata" class="item">
+         
+            Locations
+          </div>
+          <div id="picturesdata" class="item">
+          
+            Pictures
+          </div>
+
+        </div>
+      </div>
+    </span>
+    
+    <div id="default_dataview" style="margin-top: 20px; margin-bottom: 40px;">
+      <iframe class="airtable-embed" src="https://airtable.com/embed/shrtzTrJxZMd0tNjO?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    </div>
+    <div id="selected_dataview">
+
+    </div>
+
+
+  </div>
+
+  
+</body>
+</html>
+
+<script>
+  $(document).ready(function(){
+
+    $('.ui.dropdown').dropdown();
+    document.getElementById('namedata').addEventListener('click',changeviewtoname);
+    document.getElementById('locationdata').addEventListener('click',changeviewtolocation);
+    document.getElementById('picturesdata').addEventListener('click',changeviewtopicture);
+
+    function changeviewtoname(){
+      document.getElementById('default_dataview').style.display="none";
+      document.getElementById('selected_dataview').innerHTML='<iframe style="margin-top: 20px; margin-bottom: 40px;" class="airtable-embed" src="https://airtable.com/embed/shrtzTrJxZMd0tNjO?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>';
+    };
+
+    function changeviewtolocation(){
+      document.getElementById('default_dataview').style.display="none";
+      document.getElementById('selected_dataview').innerHTML='<iframe style="margin-top:20px margin-bottom: 40px;" class="airtable-embed" src="https://airtable.com/embed/shrb8DyMUvTJc0Kop?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>';
+    };
+
+    function changeviewtopicture(){
+      document.getElementById('default_dataview').style.display="none";
+      document.getElementById('selected_dataview').innerHTML='<iframe style="margin-top:20px margin-bottom: 40px;" class="airtable-embed" src="https://airtable.com/embed/shruKZqgZJNWMayJ1?backgroundColor=gray&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>';
+    };
+    
+  });
+</script>
