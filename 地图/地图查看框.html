@@ -1,0 +1,98 @@
+<!DOCTYPE html >
+<html>
+<head>
+  <title>World Happiness Report</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+
+<body>
+
+
+
+    <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">World Happiness Report</li>
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <div class="ui text container" style="margin-top: 80px;">
+    <h3>Please Select the view of Map</h3>
+    <span>Show the Map explained by
+      <div class="ui inline dropdown">
+        <div class="text">
+          
+            Scores
+        </div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div id="namedata" class="item">
+           
+            Scores
+          </div>
+          <div id="locationdata" class="item">
+         
+           GDP
+          </div>
+          <div id="socialdata" class="item">
+          
+            Social Support
+          </div>
+          <div id="picturesdata" class="item">
+          
+            Healthy
+          </div>
+
+        </div>
+      </div>
+    </span>
+    
+    <div id="default_dataview" style="margin-top: 20px; margin-bottom: 40px;">
+        <iframe title="[ World Happiness Report 2020 ]" aria-label="Map" id="datawrapper-chart-91taD" src="https://datawrapper.dwcdn.net/91taD/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="370"></iframe>
+    </div>
+    <div id="selected_dataview">
+
+    </div>
+
+
+  </div>
+
+  
+</body>
+</html>
+
+<script>
+  $(document).ready(function(){
+
+    $('.ui.dropdown').dropdown();
+    document.getElementById('namedata').addEventListener('click',changeviewtoname);
+    document.getElementById('locationdata').addEventListener('click',changeviewtolocation);
+    document.getElementById('picturesdata').addEventListener('click',changeviewtopicture);
+    document.getElementById('socialdata').addEventListener('click',changeviewtosocial);
+
+    function changeviewtoname(){
+      document.getElementById('default_dataview').style.display="none";
+      document.getElementById('selected_dataview').innerHTML='<iframe title="[ World Happiness Report 2020 ]" aria-label="Map" id="datawrapper-chart-91taD" src="https://datawrapper.dwcdn.net/91taD/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="370"></iframe>';
+      
+    };
+
+    function changeviewtolocation(){
+      document.getElementById('default_dataview').style.display="none";
+      document.getElementById('selected_dataview').innerHTML='<iframe title="[ World Happiness Report-Explained by: GDP ]" aria-label="Map" id="datawrapper-chart-kIXFp" src="https://datawrapper.dwcdn.net/kIXFp/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="370"></iframe>';
+        
+    };
+    function changeviewtopicture(){
+      document.getElementById('default_dataview').style.display="none";
+      document.getElementById('selected_dataview').innerHTML='<iframe title="[ World Hapiness Report-Explained by: Healthy ]" aria-label="Map" id="datawrapper-chart-GgWCd" src="https://datawrapper.dwcdn.net/GgWCd/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="370"></iframe>';
+        };
+    function changeviewtosocial(){
+      document.getElementById('default_dataview').style.display="none";
+      document.getElementById('selected_dataview').innerHTML='<iframe title="[ World Happiness Report-Explained by: Social support]" aria-label="Map" id="datawrapper-chart-4v5Ig" src="https://datawrapper.dwcdn.net/4v5Ig/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="390"></iframe>';
+        };
+  });
+</script>
